@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=40;
+		nextID=51;
 	};
 	class MarkerIDProvider
 	{
-		nextID=3;
+		nextID=8;
 	};
 	class Camera
 	{
-		pos[]={11643.564,47.092758,11994.075};
-		dir[]={-0.88890845,-0.29170582,0.35332477};
-		up[]={-0.27108684,0.95649838,0.10775229};
-		aside[]={0.3693881,-7.4660056e-007,0.92931724};
+		pos[]={11623.15,33.871506,11926.924};
+		dir[]={-0.78231227,-0.38907099,0.48655495};
+		up[]={-0.33045125,0.9211694,0.20552054};
+		aside[]={0.52815998,4.5888737e-007,0.84921569};
 	};
 };
 binarizationWanted=0;
@@ -116,7 +116,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=18;
+		items=23;
 		class Item0
 		{
 			dataType="Group";
@@ -135,6 +135,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 					};
 					id=2;
 					type="I_C_Soldier_Para_7_F";
@@ -155,7 +156,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="male03fre";
+									value="Male03FRE";
 								};
 							};
 						};
@@ -174,7 +175,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.98164767;
+									value=0.98000002;
 								};
 							};
 						};
@@ -575,18 +576,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11572.064,26.338665,11951.678};
-				angles[]={0,2.0168381,0};
+				position[]={11581.301,26.118036,11943.735};
+				angles[]={0.0026529003,3.1415927,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="call{[this,100000] call GOM_fnc_setRepairCargo; " \n "[this,100000] call GOM_fnc_setFuelCargo; " \n "[this,100000] call GOM_fnc_setAmmoCargo;" \n "_add = this spawn GOM_fnc_addAircraftLoadoutToObject;}";
+				name="GOMdepot";
 			};
 			id=27;
 			type="Land_RepairDepot_01_green_F";
-			atlOffset=0.23122597;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -857,6 +858,57 @@ class Mission
 			};
 			id=38;
 			type="EmptyDetector";
+		};
+		class Item18
+		{
+			dataType="Marker";
+			position[]={0,-0.26100001,0};
+			name="interceptor_pos_01";
+			type="Empty";
+			id=43;
+			atlOffset=185.709;
+		};
+		class Item19
+		{
+			dataType="Marker";
+			position[]={30720,0,0};
+			name="interceptor_pos_02";
+			type="Empty";
+			id=44;
+			atlOffset=185.97;
+		};
+		class Item20
+		{
+			dataType="Marker";
+			position[]={30720,0,30720};
+			name="interceptor_pos_03";
+			type="Empty";
+			id=45;
+			atlOffset=185.97;
+		};
+		class Item21
+		{
+			dataType="Marker";
+			position[]={0,0.146,30720};
+			name="interceptor_pos_04";
+			type="Empty";
+			id=46;
+			atlOffset=186.116;
+		};
+		class Item22
+		{
+			dataType="Trigger";
+			position[]={11624.356,22.987595,11909.45};
+			class Attributes
+			{
+				onActivation="null = execVM ""spawn_interceptor.sqf"";";
+				sizeA=0;
+				sizeB=0;
+				activationBy="BRAVO";
+			};
+			id=47;
+			type="EmptyDetector";
+			atlOffset=0.0030002594;
 		};
 	};
 };
