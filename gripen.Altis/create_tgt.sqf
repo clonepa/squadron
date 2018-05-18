@@ -1,14 +1,14 @@
 #include "compositions.sqf";
 
-_mkrList = ["domepos_01","domepos_02","domepos_03"];
+_mission = selectRandom ["Dome", "ArtyHeavy", "ArtyLight"];
+
+_mkrList = ["targetpos_01","targetpos_02","targetpos_03"];
 _mkrRandom = selectRandom _mkrList;
 _mkrPosition = (getMarkerPos _mkrRandom);
 /*_dome = "Land_Radar_Small_F" createVehicle _mkrPosition;
 _dome SetPos _mkrPosition; //absolutely set it to position of marker*/
 
 /* Original code, here for later use due to randomization/batch potential
-{
-	_randomCamp = (selectRandom [comp_camp1tent, comp_bunkers, comp_camp2tent]);
 	_randomOrient = (random 360);
 	[_x, _randomOrient, _randomcamp] call BIS_fnc_ObjectsMapper;
 	//[_x, WEST, (configfile >> "CfgGroups" >> "West" >> "rhs_faction_usmc_wd" >> "rhs_group_nato_usmc_wd_infantry" >> "rhs_group_nato_usmc_wd_infantry_team")] call BIS_fnc_spawnGroup;
@@ -16,18 +16,48 @@ _dome SetPos _mkrPosition; //absolutely set it to position of marker*/
 		_turretM2 = (nearestObject [_x,"RHS_M2StaticMG_USMC_WD"]);
 		_turretTOW = (nearestObject [_x,"RHS_TOW_TRIPOD_USMC_WD"]);
 		createVehicleCrew _turretM2; createVehicleCrew _turretTOW;
+	};*/
+
+_targetComp = 0; //Target composition init.
+_targetObject = 0; //Specific object type(s) in composition to be destroyed
+_targetCrewable = 0; //Specific object type(s) in composition to crew with AI
+_arty = 0; //0/1 false/true for if target is artillery and can be assigned a target
+
+switch (_mission) do {
+	case "Dome": {
+		_targetComp = comp_radarSmall;
+		_targetObject = ["Land_Radar_Small_F"];
 	};
-} forEach [_campPos1,_campPos2,_campPos3];*/
+
+	case "ArtyHeavy": {
+		_targetComp = comp_artyHeavy;
+		_targetObject = ["O_MBT_02_Arty_F"];
+		_targetCrewable = ["O_MBT_02_Arty_F"];
+	};
+
+	case "ArtyLight": {
+		_targetComp = comp_artyLight;
+		_targetObject = ["O_Mortar_01_F"];
+		_targetCrewable = ["O_Mortar_01_F"];
+	};
+};
 
 _randomOrient = (random 360);
-[_mkrPosition, _randomOrient, comp_radarSmall] call BIS_fnc_ObjectsMapper;
+[_mkrPosition, _randomOrient, _targetComp] call BIS_fnc_ObjectsMapper;
 
-taskTarget = (nearestObject [_mkrPosition,"Land_Radar_Small_F"]);
+taskTargets = (nearestObjects [_mkrPosition, _targetObject, 50]);
 
-_task = [independent,["dometask"],["Blow up the Radar (Small).","Blow Dome",_mkrRandom],taskTarget,true,1,true] call BIS_fnc_taskCreate;
+if !(_targetCrewable isEqualTo 0) then {
+	private _crewableObjects = (nearestObjects [_mkrPosition, _targetCrewable, 50]);
+	{
+		createVehicleCrew _x;
+	} forEach _crewableObjects;
+};
+
+_task = [independent,["strikemission"],["Blow up the target.","Strike Target",_mkrRandom],(taskTargets select 0),true,1,true] call BIS_fnc_taskCreate;
 
 _taskTrg = createTrigger ["EmptyDetector", _mkrPosition, true];
-_taskTrg setTriggerStatements ["!alive taskTarget", "['dometask','SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
+_taskTrg setTriggerStatements ["({alive _x} count taskTargets) < 1", "['strikemission','SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
 
 _groupInterceptors = createGroup [east, true];
 
