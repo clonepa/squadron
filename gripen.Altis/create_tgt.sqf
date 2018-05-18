@@ -5,52 +5,59 @@ _mission = selectRandom ["Dome", "ArtyHeavy", "ArtyLight"];
 _mkrList = ["targetpos_01","targetpos_02","targetpos_03"];
 _mkrRandom = selectRandom _mkrList;
 _mkrPosition = (getMarkerPos _mkrRandom);
-/*_dome = "Land_Radar_Small_F" createVehicle _mkrPosition;
-_dome SetPos _mkrPosition; //absolutely set it to position of marker*/
 
-/* Original code, here for later use due to randomization/batch potential
-	_randomOrient = (random 360);
-	[_x, _randomOrient, _randomcamp] call BIS_fnc_ObjectsMapper;
-	//[_x, WEST, (configfile >> "CfgGroups" >> "West" >> "rhs_faction_usmc_wd" >> "rhs_group_nato_usmc_wd_infantry" >> "rhs_group_nato_usmc_wd_infantry_team")] call BIS_fnc_spawnGroup;
-	if (_randomCamp isEqualTo comp_bunkers) then {
-		_turretM2 = (nearestObject [_x,"RHS_M2StaticMG_USMC_WD"]);
-		_turretTOW = (nearestObject [_x,"RHS_TOW_TRIPOD_USMC_WD"]);
-		createVehicleCrew _turretM2; createVehicleCrew _turretTOW;
-	};*/
+/* Original code, here for later use
+//[_x, WEST, (configfile >> "CfgGroups" >> "West" >> "rhs_faction_usmc_wd" >> "rhs_group_nato_usmc_wd_infantry" >> "rhs_group_nato_usmc_wd_infantry_team")] call BIS_fnc_spawnGroup;
+*/
 
 _targetComp = 0; //Target composition init.
 _targetObject = 0; //Specific object type(s) in composition to be destroyed
 _targetCrewable = 0; //Specific object type(s) in composition to crew with AI
-_arty = 0; //0/1 false/true for if target is artillery and can be assigned a target
+artyAmmo = 0; //If target is an artillery piece that sohuld be firing, define the ammo here.
 
 switch (_mission) do {
 	case "Dome": {
 		_targetComp = comp_radarSmall;
-		_targetObject = ["Land_Radar_Small_F"];
+		_targetObject = "Land_Radar_Small_F";
 	};
 
 	case "ArtyHeavy": {
 		_targetComp = comp_artyHeavy;
-		_targetObject = ["O_MBT_02_Arty_F"];
-		_targetCrewable = ["O_MBT_02_Arty_F"];
+		_targetObject = "O_MBT_02_Arty_F";
+		_targetCrewable = "O_MBT_02_Arty_F";
+		artyAmmo = "32Rnd_155mm_Mo_shells_O";
 	};
 
 	case "ArtyLight": {
 		_targetComp = comp_artyLight;
-		_targetObject = ["O_Mortar_01_F"];
-		_targetCrewable = ["O_Mortar_01_F"];
+		_targetObject = "O_Mortar_01_F";
+		_targetCrewable = "O_Mortar_01_F";
+		artyAmmo = "8Rnd_82mm_Mo_shells";
 	};
 };
 
 _randomOrient = (random 360);
 [_mkrPosition, _randomOrient, _targetComp] call BIS_fnc_ObjectsMapper;
 
-taskTargets = (nearestObjects [_mkrPosition, _targetObject, 50]);
+taskTargets = (nearestObjects [_mkrPosition, [_targetObject], 50]);
+
+if !(artyAmmo isEqualTo 0) then {
+	artyTargetPos = [[[_mkrPosition,4050]],["water",[_mkrPosition,1000]]] call BIS_fnc_randomPos;
+};
 
 if !(_targetCrewable isEqualTo 0) then {
-	private _crewableObjects = (nearestObjects [_mkrPosition, _targetCrewable, 50]);
+	private _crewableObjects = (nearestObjects [_mkrPosition, [_targetCrewable], 50]);
 	{
 		createVehicleCrew _x;
+		group _x addVehicle _x;
+		if !(artyAmmo isEqualTo 0) then {
+			_x doArtilleryFire [artyTargetPos, artyAmmo, 1];
+			_x addEventHandler ["Fired", {
+				params ["_unit"];
+				_unit setVehicleAmmo 1;
+				_unit doArtilleryFire [artyTargetPos, artyAmmo, 1]}
+			];
+		};
 	} forEach _crewableObjects;
 };
 
@@ -65,8 +72,8 @@ _mkrListInterceptor = ["interceptor_pos_01","interceptor_pos_02","interceptor_po
 _mkrRandomInterceptor = selectRandom _mkrListInterceptor;
 _mkrPositionInterceptor = (getMarkerPos _mkrRandomInterceptor);
 
-_rnd3 = ceil(random 4);
-for [{_i=0}, {_i<(_rnd3 + 1)}, {_i = _i + 1}] do
+_rnd3 = ceil(random 3);
+for [{_i=0}, {_i<(_rnd3)}, {_i = _i + 1}] do
 {
 	private _interceptorVeh = createVehicle ["O_Plane_Fighter_02_Stealth_F", _mkrPositionInterceptor, [], 100, "FLY"];
 	createVehicleCrew _interceptorVeh;
@@ -83,4 +90,4 @@ _wp = _groupInterceptors addWaypoint [getMarkerPos _mkrRandom, 0];
 _wp setWaypointType "SAD";
 _wp setWaypointCombatMode "RED";
 
-hint "????";
+hint str _rnd3;
