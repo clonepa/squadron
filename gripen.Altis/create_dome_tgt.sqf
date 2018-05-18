@@ -23,9 +23,34 @@ _randomOrient = (random 360);
 [_mkrPosition, _randomOrient, comp_radarSmall] call BIS_fnc_ObjectsMapper;
 
 taskTarget = (nearestObject [_mkrPosition,"Land_Radar_Small_F"]);
-hint str (getpos taskTarget);
 
 _task = [independent,["dometask"],["Blow up the Radar (Small).","Blow Dome",_mkrRandom],taskTarget,true,1,true] call BIS_fnc_taskCreate;
 
 _taskTrg = createTrigger ["EmptyDetector", _mkrPosition, true];
 _taskTrg setTriggerStatements ["!alive taskTarget", "['dometask','SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
+
+_groupInterceptors = createGroup [east, true];
+
+_mkrListInterceptor = ["interceptor_pos_01","interceptor_pos_02","interceptor_pos_03","interceptor_pos_04"];
+_mkrRandomInterceptor = selectRandom _mkrListInterceptor;
+_mkrPositionInterceptor = (getMarkerPos _mkrRandomInterceptor);
+
+_rnd3 = ceil(random 4);
+for [{_i=0}, {_i<(_rnd3 + 1)}, {_i = _i + 1}] do
+{
+	private _interceptorVeh = createVehicle ["O_Plane_Fighter_02_Stealth_F", _mkrPositionInterceptor, [], 100, "FLY"];
+	createVehicleCrew _interceptorVeh;
+	group _interceptorVeh addVehicle _interceptorVeh;
+	[driver _interceptorVeh] join _groupInterceptors;
+
+	private _pylons = ["","","","","","","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1"];
+	private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _interceptorVeh >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {getArray (_x >> "turret")};
+	{ _interceptorVeh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon") } forEach getPylonMagazines _interceptorVeh;
+	{ _interceptorVeh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex] } forEach _pylons;
+};
+
+_wp = _groupInterceptors addWaypoint [getMarkerPos _mkrRandom, 0];
+_wp setWaypointType "SAD";
+_wp setWaypointCombatMode "RED";
+
+hint "????";

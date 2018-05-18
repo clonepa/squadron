@@ -8,18 +8,21 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=160;
+		nextID=164;
+
 	};
 	class MarkerIDProvider
 	{
-		nextID=3;
+		nextID=8;
 	};
 	class Camera
 	{
+
 		pos[]={11570.813,28.165453,11970.122};
 		dir[]={0.9171316,-0.073822722,-0.39200735};
 		up[]={0.06798882,0.99724323,-0.029065805};
 		aside[]={-0.39306599,8.7113585e-007,-0.91961426};
+
 	};
 };
 binarizationWanted=0;
@@ -220,6 +223,7 @@ class Mission
 	class Entities
 	{
 		items=68;
+
 		class Item0
 		{
 			dataType="Group";
@@ -348,6 +352,7 @@ class Mission
 											};
 										};
 									};
+
 								};
 							};
 						};
@@ -748,19 +753,25 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
+
 				position[]={11594.734,26.045141,11964.643};
 				angles[]={0.0012918708,5.2208033,0};
+
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				init="call{[this,100000] call GOM_fnc_setRepairCargo; " \n "[this,100000] call GOM_fnc_setFuelCargo; " \n "[this,100000] call GOM_fnc_setAmmoCargo;" \n "_add = this spawn GOM_fnc_addAircraftLoadoutToObject;}";
+
+				name="GOMdepot";
+
 				createAsSimpleObject=1;
 			};
 			id=27;
 			type="Land_RepairDepot_01_green_F";
 			atlOffset=-1.9073486e-006;
+
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1091,6 +1102,54 @@ class Mission
 		};
 		class Item18
 		{
+			dataType="Marker";
+			position[]={0,-0.26100001,0};
+			name="interceptor_pos_01";
+			type="Empty";
+			id=43;
+			atlOffset=185.709;
+		};
+		class Item160
+		{
+			dataType="Marker";
+			position[]={30720,0,0};
+			name="interceptor_pos_02";
+			type="Empty";
+			id=44;
+			atlOffset=185.97;
+		};
+		class Item161
+		{
+			dataType="Marker";
+			position[]={30720,0,30720};
+			name="interceptor_pos_03";
+			type="Empty";
+			id=45;
+			atlOffset=185.97;
+		};
+		class Item162
+		{
+			dataType="Marker";
+			position[]={0,0.146,30720};
+			name="interceptor_pos_04";
+			type="Empty";
+			id=46;
+			atlOffset=186.116;
+		};
+		class Item163
+		{
+			dataType="Trigger";
+			position[]={11624.356,22.987595,11909.45};
+			class Attributes
+			{
+				onActivation="null = execVM ""spawn_interceptor.sqf"";";
+				sizeA=0;
+				sizeB=0;
+				activationBy="BRAVO";
+			};
+			id=47;
+			type="EmptyDetector";
+			atlOffset=0.0030002594;
 			dataType="Object";
 			class PositionInfo
 			{
