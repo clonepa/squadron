@@ -66,6 +66,11 @@ _task = [independent,["strikemission"],["Blow up the target.","Strike Target",_m
 _taskTrg = createTrigger ["EmptyDetector", _mkrPosition, true];
 _taskTrg setTriggerStatements ["({alive _x} count taskTargets) < 1", "['strikemission','SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
 
+// wait until a player in a plane gets close
+waitUntil {
+	{(vehicle _x isKindOf "Plane") && (_x distance (getMarkerPos _mkrRandom)) < 6000} count allPlayers > 0;
+};
+
 _groupInterceptors = createGroup [east, true];
 
 _mkrListInterceptor = ["interceptor_pos_01","interceptor_pos_02","interceptor_pos_03","interceptor_pos_04"];
@@ -90,4 +95,16 @@ _wp = _groupInterceptors addWaypoint [getMarkerPos _mkrRandom, 0];
 _wp setWaypointType "SAD";
 _wp setWaypointCombatMode "RED";
 
-hint str _rnd3;
+hint format ["hunting player with %1 interceptors", _rnd3];
+// wait for 2 minutes and until coast is clear
+_interceptTime = serverTime;
+waitUntil {
+	serverTime - _interceptTime > 120 &&
+	{_x distance (leader _groupInterceptors) < 3500 && alive _x} count allPlayers == 0;
+};
+hint "interception finished";
+deleteWaypoint _wp;
+_wp2 = _groupInterceptors addWaypoint [_mkrPositionInterceptor, 1500];
+_wp2 setWaypointType "MOVE";
+_wp2 setWaypointBehaviour "CARELESS";
+_wp2 setWaypointStatements ["true", "{deleteVehicle vehicle _x; deleteVehicle _x} forEach thisList;"]
