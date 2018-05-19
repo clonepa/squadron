@@ -17,3 +17,7 @@ class CfgCommunicationMenu
 
 #include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
 #include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
+
+respawn = "BASE";
+respawnDelay = 10;
+disabledAI = 1;
