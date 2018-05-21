@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=246;
+		nextID=248;
 	};
 	class MarkerIDProvider
 	{
-		nextID=9;
+		nextID=11;
 	};
 	class Camera
 	{
-		pos[]={11573.972,312.2283,11963.623};
-		dir[]={0.0091334637,-0.99994999,0.0040712962};
-		up[]={0.91332084,0.00999978,0.40711823};
-		aside[]={0.40713859,0,-0.9133665};
+		pos[]={11680.542,140.72887,12006.238};
+		dir[]={-0.48814121,-0.7247287,-0.4863759};
+		up[]={-0.51339483,0.68902093,-0.51153898};
+		aside[]={-0.70585251,4.1909516e-009,0.70841241};
 	};
 };
 binarizationWanted=0;
@@ -236,7 +236,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=139;
+		items=140;
 		class Item0
 		{
 			dataType="Group";
@@ -994,6 +994,7 @@ class Mission
 				onActivation="null = execVM ""create_tgt.sqf"";";
 				sizeA=0;
 				sizeB=0;
+				repeatable=1;
 				activationBy="ALPHA";
 			};
 			id=38;
@@ -2430,7 +2431,7 @@ class Mission
 			name="targetpos_04";
 			type="Empty";
 			id=180;
-			atlOffset=-5.6051788;
+			atlOffset=-5.6051712;
 		};
 		class Item74
 		{
@@ -7913,11 +7914,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={19778.941,88.658646,12294.82};
+				position[]={19774.318,86.97184,12354.304};
 			};
 			id=201;
 			type="ModuleSpawnAI_F";
-			atlOffset=0.51682281;
+			atlOffset=0.51799774;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7935,7 +7936,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=2;
+							value=10;
 						};
 					};
 				};
@@ -8030,7 +8031,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=4;
 						};
 					};
 				};
@@ -8049,7 +8050,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=10;
+							value=0;
 						};
 					};
 				};
@@ -8210,7 +8211,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={19354.705,16.802109,15873.695};
-				angles[]={0.0026520467,0,6.1861582};
+				angles[]={0.0026529003,0,6.1861625};
 			};
 			id=203;
 			type="ModuleSpawnAI_F";
@@ -8345,7 +8346,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -8505,12 +8506,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={19457.551,84.191162,12777.184};
-				angles[]={0.02399601,0,0.0066682254};
+				position[]={19457.551,84.191605,12777.184};
+				angles[]={0.023998277,0,0.0066671576};
 			};
 			id=205;
 			type="ModuleSpawnAIPoint_F";
-			atlOffset=-0.013442993;
+			atlOffset=-0.013000488;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8528,7 +8529,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=2;
+							value=10;
 						};
 					};
 				};
@@ -8547,7 +8548,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=4;
 						};
 					};
 				};
@@ -8566,7 +8567,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=10;
+							value=0;
 						};
 					};
 				};
@@ -8616,12 +8617,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={18727.189,38.429485,15868.985};
-				angles[]={0.021331646,0,6.2618537};
+				position[]={18727.189,38.429245,15868.985};
+				angles[]={0.021327924,0,6.2618575};
 			};
 			id=206;
 			type="ModuleSpawnAIPoint_F";
-			atlOffset=-0.04875946;
+			atlOffset=-0.048999786;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8677,7 +8678,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -8813,7 +8814,7 @@ class Mission
 			};
 			id=214;
 			type="EmptyDetectorAreaR250";
-			atlOffset=-0.0079975128;
+			atlOffset=-0.0079965591;
 		};
 		class Item108
 		{
@@ -9207,6 +9208,23 @@ class Mission
 			id=245;
 			type="LocationArea_F";
 			atlOffset=-0.030490875;
+		};
+		class Item139
+		{
+			dataType="Trigger";
+			position[]={11625.491,23.035484,11907.361};
+			class Attributes
+			{
+				text="Support Mission";
+				onActivation="null = execVM ""create_east_tgt.sqf"";";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+				activationBy="BRAVO";
+			};
+			id=247;
+			type="EmptyDetector";
+			atlOffset=0.0039997101;
 		};
 	};
 	class Connections

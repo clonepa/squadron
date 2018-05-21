@@ -61,10 +61,18 @@ if !(_targetCrewable isEqualTo 0) then {
 	} forEach _crewableObjects;
 };
 
-_task = [independent,["strikemission"],["Blow up the target.","Strike Target",_mkrRandom],(taskTargets select 0),true,1,true] call BIS_fnc_taskCreate;
+if !(isNil "westMissionIncrement") then {
+	westMissionIncrement = westMissionIncrement + 1;
+} else {
+	westMissionIncrement = 1;
+};
+
+taskName_west = "westmission_" + (str westMissionIncrement);
+
+_task = [independent,[taskName_west],["Blow up the target.","Strike Target",_mkrRandom],(taskTargets select 0),true,1,true] call BIS_fnc_taskCreate;
 
 _taskTrg = createTrigger ["EmptyDetector", _mkrPosition, true];
-_taskTrg setTriggerStatements ["({alive _x} count taskTargets) < 1", "['strikemission','SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
+_taskTrg setTriggerStatements ["({alive _x} count taskTargets) < 1", "[taskName_west,'SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
 
 // wait until a player in a plane gets close
 waitUntil {
