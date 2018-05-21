@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=180;
+		nextID=246;
 	};
 	class MarkerIDProvider
 	{
@@ -58,13 +58,15 @@ addons[]=
 	"A3_Props_F_Orange_Humanitarian_Supplies",
 	"A3_Props_F_Orange_Humanitarian_Garbage",
 	"A3_Air_F_EPB_Heli_Light_03",
-	"A3_Modules_F_Multiplayer"
+	"A3_Modules_F_Multiplayer",
+	"A3_Modules_F",
+	"A3_Modules_F_Heli_Misc"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			className="A3_Characters_F_Exp";
@@ -198,6 +200,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item19
+		{
+			className="A3_Modules_F_Heli";
+			name="Arma 3 Helicopters - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=15133450;
@@ -227,7 +236,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=73;
+		items=139;
 		class Item0
 		{
 			dataType="Group";
@@ -2414,16 +2423,6801 @@ class Mission
 				nAttributes=10;
 			};
 		};
+		class Item73
+		{
+			dataType="Marker";
+			position[]={20348.846,118.04395,13040.664};
+			name="targetpos_04";
+			type="Empty";
+			id=180;
+			atlOffset=-5.6051788;
+		};
+		class Item74
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={28074.082,4.2977295,11843.723};
+			};
+			id=181;
+			type="SideBLUFOR_F";
+			atlOffset=190.26773;
+		};
+		class Item75
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={28387.406,4.4487305,14023.154};
+			};
+			id=182;
+			type="SideOPFOR_F";
+			atlOffset=190.41873;
+		};
+		class Item76
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21201.156,25.049026,6675.1777};
+				angles[]={6.2605233,0,6.247201};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=183;
+			type="ModuleSector_F";
+			atlOffset=-0.013328552;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item77
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={22183.66,14.150076,7754.1157};
+				angles[]={6.223258,0,6.2445378};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=184;
+			type="ModuleSector_F";
+			atlOffset=0.02132988;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item78
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21215.52,31.317556,8869.3193};
+				angles[]={6.1440892,0,6.2805109};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=185;
+			type="ModuleSector_F";
+			atlOffset=0.13755417;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item79
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20874.881,28.34672,11715.902};
+				angles[]={0.073202357,0,0.10494626};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=186;
+			type="ModuleSector_F";
+			atlOffset=0.031993866;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item80
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={19959.945,80.766205,13258.451};
+				angles[]={0.018663859,0,0.20763075};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=187;
+			type="ModuleSector_F";
+			atlOffset=0.19195557;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item81
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={17882.586,29.598711,12830.519};
+				angles[]={0.013332055,0,6.2485328};
+			};
+			areaSize[]={500,0,500};
+			flags=1;
+			id=188;
+			type="ModuleSector_F";
+			atlOffset=-0.04801178;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item82
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={18596.92,19.833202,15080.004};
+				angles[]={6.2645216,0,6.2778478};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=189;
+			type="ModuleSector_F";
+			atlOffset=0.013362885;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item83
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={18790.379,66.270027,15591.066};
+				angles[]={6.1585021,0,0.070548877};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=190;
+			type="ModuleSector_F";
+			atlOffset=0.19595337;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item84
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={19298.768,21.321281,16563.898};
+				angles[]={0.0066682254,0,6.2805333};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=191;
+			type="ModuleSector_F";
+			atlOffset=-0.0093345642;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item85
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21960.092,14.427178,16294.838};
+				angles[]={6.2818484,0,6.2551923};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=192;
+			type="ModuleSector_F";
+			atlOffset=-0.026659012;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item86
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21633.961,27.646097,17008.855};
+				angles[]={0.02399601,0,0.018667053};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=193;
+			type="ModuleSector_F";
+			atlOffset=-0.0053329468;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item87
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21350.979,11.643201,19242.725};
+				angles[]={0.042640556,0,6.2086568};
+			};
+			areaSize[]={200,0,200};
+			flags=1;
+			id=194;
+			type="ModuleSector_F";
+			atlOffset=-0.11730766;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item88
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={23414.086,12.61821,19760.516};
+				angles[]={6.2818484,0,6.2778587};
+			};
+			areaSize[]={200,0,200};
+			flags=1;
+			id=195;
+			type="ModuleSector_F";
+			atlOffset=-0.0040187836;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item89
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={24237.844,13.094645,19849.74};
+				angles[]={0.0013372133,0,0.0066682254};
+			};
+			areaSize[]={200,0,200};
+			flags=1;
+			id=196;
+			type="ModuleSector_F";
+			atlOffset=0.0053329468;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item90
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={26254.545,14.005668,21025.305};
+				angles[]={6.2645216,0,0.0013372133};
+			};
+			areaSize[]={300,0,300};
+			flags=1;
+			id=197;
+			type="ModuleSector_F";
+			atlOffset=0.047242165;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item91
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={25645.373,6.5184965,20116.121};
+				angles[]={6.1716504,0,0.046633169};
+			};
+			areaSize[]={150,0,150};
+			flags=1;
+			id=198;
+			type="ModuleSector_F";
+			atlOffset=0.15862846;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item92
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={27507.385,13.736308,23160.785};
+				angles[]={6.0883551,0,0.16385107};
+			};
+			areaSize[]={250,0,250};
+			flags=1;
+			id=199;
+			type="ModuleSector_F";
+			atlOffset=0.36330032;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item93
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={26994.52,12.768511,24084.918};
+				angles[]={6.2485328,0,0};
+			};
+			areaSize[]={300,0,300};
+			flags=1;
+			id=200;
+			type="ModuleSector_F";
+			atlOffset=0.034658432;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSector_F_DefaultOwner";
+					expression="_this setVariable ['DefaultOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSector_F_CostInfantry";
+					expression="_this setVariable ['CostInfantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSector_F_OnOwnerChange";
+					expression="_this setVariable ['OnOwnerChange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSector_F_ScoreReward";
+					expression="_this setVariable ['ScoreReward',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSector_F_CostWheeled";
+					expression="_this setVariable ['CostWheeled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSector_F_OwnerLimit";
+					expression="_this setVariable ['OwnerLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0.9";
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSector_F_TaskTitle";
+					expression="_this setVariable ['TaskTitle',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSector_F_Designation";
+					expression="_this setVariable ['Designation',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSector_F_TaskOwner";
+					expression="_this setVariable ['TaskOwner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSector_F_CostAir";
+					expression="_this setVariable ['CostAir',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSector_F_CostPlayers";
+					expression="_this setVariable ['CostPlayers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSector_F_CostTracked";
+					expression="_this setVariable ['CostTracked',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ModuleSector_F_TaskDescription";
+					expression="_this setVariable ['TaskDescription',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ModuleSector_F_CostWater";
+					expression="_this setVariable ['CostWater',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="0";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ModuleSector_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=15;
+			};
+		};
+		class Item94
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={19778.941,88.658646,12294.82};
+			};
+			id=201;
+			type="ModuleSpawnAI_F";
+			atlOffset=0.51682281;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSpawnAI_F_Motorized";
+					expression="_this setVariable ['Motorized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSpawnAI_F_Armored";
+					expression="_this setVariable ['Armored',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSpawnAI_F_InfantryInGroup";
+					expression="_this setVariable ['InfantryInGroup',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=6;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSpawnAI_F_ManpowerCap";
+					expression="_this setVariable ['ManpowerCap',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSpawnAI_F_Expression";
+					expression="_this setVariable ['Expression',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSpawnAI_F_Mechanized";
+					expression="_this setVariable ['Mechanized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSpawnAI_F_Infantry";
+					expression="_this setVariable ['Infantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=10;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSpawnAI_F_Faction";
+					expression="_this setVariable ['Faction',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="BLU_F";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSpawnAI_F_SpawnRate";
+					expression="_this setVariable ['SpawnRate',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSpawnAI_F_BlacklistedGroups";
+					expression="_this setVariable ['BlacklistedGroups',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSpawnAI_F_VehiclesInGroup";
+					expression="_this setVariable ['VehiclesInGroup',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSpawnAI_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="West";
+						};
+					};
+				};
+				nAttributes=12;
+			};
+		};
+		class Item95
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20480.336,73.304306,12388.977};
+				angles[]={0.15865593,0,0.11021759};
+			};
+			id=202;
+			type="ModuleSpawnAIOptions_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSpawnAIOptions_F_CorpseDeleteTime";
+					expression="_this setVariable ['CorpseDeleteTime',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSpawnAIOptions_F_WreckDeleteTime";
+					expression="_this setVariable ['WreckDeleteTime',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=240;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item96
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={19354.705,16.802109,15873.695};
+				angles[]={0.0026520467,0,6.1861582};
+			};
+			id=203;
+			type="ModuleSpawnAI_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSpawnAI_F_Motorized";
+					expression="_this setVariable ['Motorized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSpawnAI_F_Armored";
+					expression="_this setVariable ['Armored',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=5;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSpawnAI_F_InfantryInGroup";
+					expression="_this setVariable ['InfantryInGroup',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=6;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSpawnAI_F_ManpowerCap";
+					expression="_this setVariable ['ManpowerCap',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSpawnAI_F_Expression";
+					expression="_this setVariable ['Expression',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ModuleSpawnAI_F_Mechanized";
+					expression="_this setVariable ['Mechanized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=4;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ModuleSpawnAI_F_Infantry";
+					expression="_this setVariable ['Infantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ModuleSpawnAI_F_Faction";
+					expression="_this setVariable ['Faction',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="OPF_F";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ModuleSpawnAI_F_SpawnRate";
+					expression="_this setVariable ['SpawnRate',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ModuleSpawnAI_F_BlacklistedGroups";
+					expression="_this setVariable ['BlacklistedGroups',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ModuleSpawnAI_F_VehiclesInGroup";
+					expression="_this setVariable ['VehiclesInGroup',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ModuleSpawnAI_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="East";
+						};
+					};
+				};
+				nAttributes=12;
+			};
+		};
+		class Item97
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20165.23,103.21325,15857.879};
+			};
+			id=204;
+			type="ModuleSpawnAIOptions_F";
+			atlOffset=85.26313;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSpawnAIOptions_F_CorpseDeleteTime";
+					expression="_this setVariable ['CorpseDeleteTime',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSpawnAIOptions_F_WreckDeleteTime";
+					expression="_this setVariable ['WreckDeleteTime',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=240;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item98
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={19457.551,84.191162,12777.184};
+				angles[]={0.02399601,0,0.0066682254};
+			};
+			id=205;
+			type="ModuleSpawnAIPoint_F";
+			atlOffset=-0.013442993;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSpawnAIPoint_F_Motorized";
+					expression="_this setVariable ['Motorized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSpawnAIPoint_F_Mechanized";
+					expression="_this setVariable ['Mechanized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSpawnAIPoint_F_Infantry";
+					expression="_this setVariable ['Infantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=10;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSpawnAIPoint_F_Faction";
+					expression="_this setVariable ['Faction',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="BLU_F";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSpawnAIPoint_F_Armored";
+					expression="_this setVariable ['Armored',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item99
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={18727.189,38.429485,15868.985};
+				angles[]={0.021331646,0,6.2618537};
+			};
+			id=206;
+			type="ModuleSpawnAIPoint_F";
+			atlOffset=-0.04875946;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleSpawnAIPoint_F_Motorized";
+					expression="_this setVariable ['Motorized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleSpawnAIPoint_F_Mechanized";
+					expression="_this setVariable ['Mechanized',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=4;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleSpawnAIPoint_F_Infantry";
+					expression="_this setVariable ['Infantry',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleSpawnAIPoint_F_Faction";
+					expression="_this setVariable ['Faction',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="OPF_F";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleSpawnAIPoint_F_Armored";
+					expression="_this setVariable ['Armored',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=5;
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item100
+		{
+			dataType="Marker";
+			position[]={28217.18,16.268597,25589.053};
+			name="marker_8";
+			type="o_hq";
+			id=207;
+			atlOffset=-5.0329113;
+		};
+		class Item101
+		{
+			dataType="Marker";
+			position[]={21654.609,17.178785,6235.4131};
+			name="marker_9";
+			type="b_hq";
+			id=208;
+			atlOffset=0.025360107;
+		};
+		class Item102
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={28419.203,0.023025513,9330.0605};
+			};
+			id=209;
+			type="ModuleSpawnAISectorTactic_F";
+			atlOffset=185.99303;
+		};
+		class Item103
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20807.107,35.747631,6726.749};
+				angles[]={0.26681599,0,6.1349478};
+			};
+			id=210;
+			type="LocationArea_F";
+			atlOffset=-0.42256927;
+		};
+		class Item104
+		{
+			dataType="Trigger";
+			position[]={20789.105,37.686314,6725.2461};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=211;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-0.083972931;
+		};
+		class Item105
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21738.688,14.879353,7570.4814};
+				angles[]={0.0053265258,0,0.0093286335};
+			};
+			id=212;
+			type="LocationArea_F";
+			atlOffset=0.00083732605;
+		};
+		class Item106
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20562.012,33.131092,8857.2344};
+				angles[]={6.2485328,0,0.012000273};
+			};
+			id=213;
+			type="LocationArea_F";
+			atlOffset=0.056137085;
+		};
+		class Item107
+		{
+			dataType="Trigger";
+			position[]={21684.453,15.75386,7538.8252};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=214;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-0.0079975128;
+		};
+		class Item108
+		{
+			dataType="Trigger";
+			position[]={20450,35.435394,8850};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+				isRectangle=1;
+			};
+			id=215;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.08531189;
+		};
+		class Item109
+		{
+			dataType="Trigger";
+			position[]={20205.967,44.335945,11688.771};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=216;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.39990234;
+		};
+		class Item110
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20262.129,50.824982,11694.769};
+			};
+			id=217;
+			type="LocationArea_F";
+			atlOffset=-0.14689636;
+		};
+		class Item111
+		{
+			dataType="Trigger";
+			position[]={19400,38.854614,13248.953};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=218;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.035995483;
+		};
+		class Item112
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={19412.072,39.767212,13231.438};
+			};
+			id=219;
+			type="LocationArea_F";
+			atlOffset=-0.031936646;
+		};
+		class Item113
+		{
+			dataType="Trigger";
+			position[]={16841.336,24,12667.103};
+			class Attributes
+			{
+				sizeA=500;
+				sizeB=500;
+				activationBy="ANY";
+			};
+			id=220;
+			type="EmptyDetectorAreaR250";
+		};
+		class Item114
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={16820.531,22.572878,12711.029};
+			};
+			id=221;
+			type="LocationArea_F";
+			atlOffset=-0.037326813;
+		};
+		class Item115
+		{
+			dataType="Trigger";
+			position[]={18081.203,22.697023,15192.105};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=222;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.019992828;
+		};
+		class Item116
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={18106.529,24.495382,15238.941};
+			};
+			id=223;
+			type="LocationArea_F";
+			atlOffset=0.0079994202;
+		};
+		class Item117
+		{
+			dataType="Trigger";
+			position[]={18321.115,47.893749,15546.167};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=224;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.10012817;
+		};
+		class Item118
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={18356.236,49.446598,15569.594};
+			};
+			id=225;
+			type="LocationArea_F";
+			atlOffset=0.022407532;
+		};
+		class Item119
+		{
+			dataType="Trigger";
+			position[]={18823.326,31.319633,16629.652};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=226;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.042655945;
+		};
+		class Item120
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={18818.926,30.724171,16609.377};
+			};
+			id=227;
+			type="LocationArea_F";
+			atlOffset=0.043987274;
+		};
+		class Item121
+		{
+			dataType="Trigger";
+			position[]={20992.584,40.979816,16972.76};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=228;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.20839691;
+		};
+		class Item122
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={20965.043,41.549465,16969.27};
+				angles[]={0.079830162,0,6.2060056};
+			};
+			id=229;
+			type="LocationArea_F";
+			atlOffset=-0.13224792;
+		};
+		class Item123
+		{
+			dataType="Trigger";
+			position[]={21405.709,20.497232,16382.938};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=230;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.030654907;
+		};
+		class Item124
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21375.666,22.305668,16424.014};
+			};
+			id=231;
+			type="LocationArea_F";
+			atlOffset=0.048221588;
+		};
+		class Item125
+		{
+			dataType="Trigger";
+			position[]={20957.828,15.517007,19258.854};
+			class Attributes
+			{
+				sizeA=200;
+				sizeB=200;
+				activationBy="ANY";
+			};
+			id=232;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.054653168;
+		};
+		class Item126
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={21021.791,16.984074,19284.516};
+				angles[]={0.015998369,0,0.0079935296};
+			};
+			id=233;
+			type="LocationArea_F";
+			atlOffset=-0.0080032349;
+		};
+		class Item127
+		{
+			dataType="Trigger";
+			position[]={23218.129,14.154196,19986.35};
+			class Attributes
+			{
+				sizeA=200;
+				sizeB=200;
+				activationBy="ANY";
+			};
+			id=234;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.0039978027;
+		};
+		class Item128
+		{
+			dataType="Trigger";
+			position[]={23976.678,14.602989,20156.818};
+			class Attributes
+			{
+				sizeA=200;
+				sizeB=200;
+				activationBy="ANY";
+			};
+			id=235;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-0.0039978027;
+		};
+		class Item129
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={23206.814,13.762311,19954.066};
+			};
+			id=236;
+			type="LocationArea_F";
+			atlOffset=0.014661789;
+		};
+		class Item130
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={23984.314,14.681433,20124.09};
+				angles[]={6.2818484,0,0.025327841};
+			};
+			id=237;
+			type="LocationArea_F";
+			atlOffset=0.026659012;
+		};
+		class Item131
+		{
+			dataType="Trigger";
+			position[]={25423.385,9.9604788,20338.553};
+			class Attributes
+			{
+				sizeA=150;
+				sizeB=150;
+				activationBy="ANY";
+			};
+			id=238;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-0.01599884;
+		};
+		class Item132
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={25409.514,9.8235989,20331.756};
+				angles[]={0.031988446,0,0.023993526};
+			};
+			id=239;
+			type="LocationArea_F";
+			atlOffset=-0.0085449219;
+		};
+		class Item133
+		{
+			dataType="Trigger";
+			position[]={25649.262,21.228041,21348.582};
+			class Attributes
+			{
+				sizeA=300;
+				sizeB=300;
+				activationBy="ANY";
+			};
+			id=240;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.24038124;
+		};
+		class Item134
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={25695.695,20.369972,21352.449};
+			};
+			id=241;
+			type="LocationArea_F";
+			atlOffset=0.033267975;
+		};
+		class Item135
+		{
+			dataType="Trigger";
+			position[]={27009.363,20.338375,23218.811};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANY";
+			};
+			id=242;
+			type="EmptyDetectorAreaR250";
+			atlOffset=0.015991211;
+		};
+		class Item136
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={26990.906,20.41032,23204.033};
+			};
+			id=243;
+			type="LocationArea_F";
+			atlOffset=0.010662079;
+		};
+		class Item137
+		{
+			dataType="Trigger";
+			position[]={26981.936,21.286413,24707.494};
+			class Attributes
+			{
+				sizeA=300;
+				sizeB=300;
+				activationBy="ANY";
+			};
+			id=244;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-0.004360199;
+		};
+		class Item138
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={26949.771,21.957043,24679.514};
+			};
+			id=245;
+			type="LocationArea_F";
+			atlOffset=-0.030490875;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=7;
+			nextID=83;
 		};
 		class Links
 		{
-			items=7;
+			items=83;
 			class Item0
 			{
 				linkID=0;
@@ -2489,6 +9283,766 @@ class Mission
 				linkID=6;
 				item0=179;
 				item1=33;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item7
+			{
+				linkID=7;
+				item0=183;
+				item1=182;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item8
+			{
+				linkID=8;
+				item0=183;
+				item1=181;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item9
+			{
+				linkID=9;
+				item0=182;
+				item1=184;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item10
+			{
+				linkID=10;
+				item0=181;
+				item1=184;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item11
+			{
+				linkID=11;
+				item0=182;
+				item1=185;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item12
+			{
+				linkID=12;
+				item0=181;
+				item1=185;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item13
+			{
+				linkID=13;
+				item0=182;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item14
+			{
+				linkID=14;
+				item0=181;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item15
+			{
+				linkID=15;
+				item0=182;
+				item1=187;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item16
+			{
+				linkID=16;
+				item0=181;
+				item1=187;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item17
+			{
+				linkID=17;
+				item0=182;
+				item1=188;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item18
+			{
+				linkID=18;
+				item0=181;
+				item1=188;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item19
+			{
+				linkID=19;
+				item0=182;
+				item1=189;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item20
+			{
+				linkID=20;
+				item0=181;
+				item1=189;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item21
+			{
+				linkID=21;
+				item0=182;
+				item1=190;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item22
+			{
+				linkID=22;
+				item0=181;
+				item1=190;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item23
+			{
+				linkID=23;
+				item0=182;
+				item1=191;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item24
+			{
+				linkID=24;
+				item0=181;
+				item1=191;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item25
+			{
+				linkID=25;
+				item0=182;
+				item1=192;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item26
+			{
+				linkID=26;
+				item0=181;
+				item1=192;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item27
+			{
+				linkID=27;
+				item0=182;
+				item1=193;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item28
+			{
+				linkID=28;
+				item0=181;
+				item1=193;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item29
+			{
+				linkID=29;
+				item0=182;
+				item1=194;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item30
+			{
+				linkID=30;
+				item0=181;
+				item1=194;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item31
+			{
+				linkID=31;
+				item0=182;
+				item1=195;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item32
+			{
+				linkID=32;
+				item0=181;
+				item1=195;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item33
+			{
+				linkID=33;
+				item0=181;
+				item1=196;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item34
+			{
+				linkID=34;
+				item0=182;
+				item1=196;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item35
+			{
+				linkID=35;
+				item0=182;
+				item1=197;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item36
+			{
+				linkID=36;
+				item0=181;
+				item1=197;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item37
+			{
+				linkID=37;
+				item0=181;
+				item1=198;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item38
+			{
+				linkID=38;
+				item0=182;
+				item1=198;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item39
+			{
+				linkID=39;
+				item0=182;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item40
+			{
+				linkID=40;
+				item0=181;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item41
+			{
+				linkID=41;
+				item0=182;
+				item1=200;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item42
+			{
+				linkID=42;
+				item0=181;
+				item1=200;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item43
+			{
+				linkID=43;
+				item0=202;
+				item1=201;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item44
+			{
+				linkID=44;
+				item0=204;
+				item1=203;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item45
+			{
+				linkID=45;
+				item0=203;
+				item1=206;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item46
+			{
+				linkID=46;
+				item0=201;
+				item1=205;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item47
+			{
+				linkID=47;
+				item0=211;
+				item1=210;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item48
+			{
+				linkID=48;
+				item0=210;
+				item1=183;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item49
+			{
+				linkID=49;
+				item0=212;
+				item1=214;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item50
+			{
+				linkID=50;
+				item0=212;
+				item1=184;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item51
+			{
+				linkID=51;
+				item0=215;
+				item1=213;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item52
+			{
+				linkID=52;
+				item0=213;
+				item1=185;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item53
+			{
+				linkID=53;
+				item0=217;
+				item1=216;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item54
+			{
+				linkID=54;
+				item0=217;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item55
+			{
+				linkID=55;
+				item0=218;
+				item1=219;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item56
+			{
+				linkID=56;
+				item0=219;
+				item1=187;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item57
+			{
+				linkID=57;
+				item0=221;
+				item1=220;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item58
+			{
+				linkID=58;
+				item0=221;
+				item1=188;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item59
+			{
+				linkID=59;
+				item0=222;
+				item1=223;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item60
+			{
+				linkID=60;
+				item0=223;
+				item1=189;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item61
+			{
+				linkID=61;
+				item0=224;
+				item1=225;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item62
+			{
+				linkID=62;
+				item0=225;
+				item1=190;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item63
+			{
+				linkID=63;
+				item0=226;
+				item1=227;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item64
+			{
+				linkID=64;
+				item0=227;
+				item1=191;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item65
+			{
+				linkID=65;
+				item0=229;
+				item1=228;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item66
+			{
+				linkID=66;
+				item0=229;
+				item1=193;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item67
+			{
+				linkID=67;
+				item0=232;
+				item1=233;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item68
+			{
+				linkID=68;
+				item0=233;
+				item1=194;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item69
+			{
+				linkID=69;
+				item0=235;
+				item1=237;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item70
+			{
+				linkID=70;
+				item0=237;
+				item1=196;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item71
+			{
+				linkID=71;
+				item0=238;
+				item1=239;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item72
+			{
+				linkID=72;
+				item0=239;
+				item1=198;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item73
+			{
+				linkID=73;
+				item0=240;
+				item1=241;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item74
+			{
+				linkID=74;
+				item0=241;
+				item1=197;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item75
+			{
+				linkID=75;
+				item0=245;
+				item1=244;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item76
+			{
+				linkID=76;
+				item0=245;
+				item1=200;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item77
+			{
+				linkID=77;
+				item0=243;
+				item1=242;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item78
+			{
+				linkID=78;
+				item0=243;
+				item1=199;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item79
+			{
+				linkID=79;
+				item0=231;
+				item1=230;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item80
+			{
+				linkID=80;
+				item0=231;
+				item1=192;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item81
+			{
+				linkID=81;
+				item0=236;
+				item1=234;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item82
+			{
+				linkID=82;
+				item0=236;
+				item1=195;
 				class CustomData
 				{
 					type="Sync";

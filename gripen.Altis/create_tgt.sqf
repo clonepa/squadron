@@ -85,7 +85,7 @@ for [{_i=0}, {_i<(_rnd3)}, {_i = _i + 1}] do
 	group _interceptorVeh addVehicle _interceptorVeh;
 	[driver _interceptorVeh] join _groupInterceptors;
 
-	private _pylons = ["","","","","","","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1","PylonMissile_Missile_AA_R77_INT_x1"];
+	private _pylons = ["","","","","","","PylonMissile_Missile_AA_R73_x1","PylonMissile_Missile_AA_R73_x1","","","","",""];
 	private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _interceptorVeh >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {getArray (_x >> "turret")};
 	{ _interceptorVeh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon") } forEach getPylonMagazines _interceptorVeh;
 	{ _interceptorVeh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex] } forEach _pylons;
