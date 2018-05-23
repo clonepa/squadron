@@ -72,7 +72,9 @@ taskName_west = "westmission_" + (str westMissionIncrement);
 _task = [independent,[taskName_west],["Blow up the target.","Strike Target",_mkrRandom],(taskTargets select 0),true,1,true] call BIS_fnc_taskCreate;
 
 _taskTrg = createTrigger ["EmptyDetector", _mkrPosition, true];
-_taskTrg setTriggerStatements ["({alive _x} count taskTargets) < 1", "[taskName_west,'SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
+_taskTrg setTriggerStatements ["({alive _x} count taskTargets) < 1", "[taskName_west,'SUCCEEDED',true] call BIS_fnc_taskSetState; westMissions = westMissions - 1;", ""];
+
+westMissions = westMissions + 1;
 
 // wait until a player in a plane gets close
 waitUntil {
@@ -115,4 +117,4 @@ deleteWaypoint _wp;
 _wp2 = _groupInterceptors addWaypoint [_mkrPositionInterceptor, 1500];
 _wp2 setWaypointType "MOVE";
 _wp2 setWaypointBehaviour "CARELESS";
-_wp2 setWaypointStatements ["true", "{deleteVehicle vehicle _x; deleteVehicle _x} forEach thisList;"]
+_wp2 setWaypointStatements ["true", "{deleteVehicle vehicle _x; deleteVehicle _x} forEach thisList;"];
