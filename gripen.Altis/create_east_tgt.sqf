@@ -6,6 +6,8 @@ _opfor_tgts = [];
 	};
 } forEach allUnits;
 
+if (_opfor_tgts isEqualTo []) exitWith {};
+
 sleep 1;
 
 if !(isNil "eastMissionIncrement") then {
@@ -24,3 +26,5 @@ _taskTrg = createTrigger ["EmptyDetector", getPos taskTarget, true];
 _taskTrg setTriggerStatements ["!alive taskTarget", "[taskName,'SUCCEEDED',true] call BIS_fnc_taskSetState", ""];
 
 hint format ["Target: %1 \nPosition: %2 \nTask Name: %3 \n\nPotential List: %4", str taskTarget, str getPos taskTarget, str taskName, str _opfor_tgts]; //debug
+
+eastMissions = eastMissions + 1;
